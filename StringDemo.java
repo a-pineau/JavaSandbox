@@ -15,7 +15,31 @@ public class StringDemo {
        // String modifiers
        // Used to modify a String
        // Not immutable
-       // StringBuffer
+       // StringBuffer/StringBuilder
+       // Prefer StringBuilder since its faster
+       // If threads use, prefer StringBuffer
        // ----------------
+       StringBuffer sB = new StringBuffer("test");
+       sB.append("_Nope");
+       // Append
+       System.out.println("StringBuffer = " + sB);
+       sB.reverse();
+       // Reverse
+       System.out.println(sB);
+       // Delete
+       sB.delete(0, 3);
+       System.out.println(sB);
+       // Insert
+       StringBuffer sB2 = new StringBuffer("ABC");
+       sB2.insert(1, "ab"); // Cannot insert out of bounds
+       System.out.println("sB2 = " + sB2);
+       sB2.replace(1, 3, "cd"); // Can go out of bounds
+       System.out.println("sB2 = " + sB2);   
+       // Capacity
+       int cap = sB2.capacity();
+       System.out.println("Capacity sB2 = " + cap);
+       /*
+        * For the rest, see: https://www.tutorialspoint.com/java/java_string_buffer.htm
+        */
     }
  }
